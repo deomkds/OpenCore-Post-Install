@@ -2,15 +2,9 @@
    "name": "OpenCore-Post-Install",
    "version": "0.6.3",
    "description": "OpenCore Post-Install guide",
-   "main": "",
-   "author": {
-      "name": "Dortania",
-      "url": "https://github.com/dortania"
-   },
-   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/dortania/OpenCore-Post-Install.git"
-   },
+   "main": "index.js",
+   "author": "deomkds (https://github.com/deomkds)",
+   "repository": "git+https://github.com/deomkds/OpenCore-Post-Install.git",
    "scripts": {
       "dev": "vuepress dev",
       "build": "vuepress build",

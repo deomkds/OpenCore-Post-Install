@@ -3,20 +3,8 @@ const {
 } = require('../package')
 
 module.exports = {
-    /**
-     * Ref：https://v1.vuepress.vuejs.org/config/#title
-     */
-    title: 'OpenCore Post-Install',
-    /**
-     * Ref：https://v1.vuepress.vuejs.org/config/#description
-     */
+    title: 'Pós-instalação do OpenCore',
     description: description,
-
-    /**
-     * Extra tags to be injected to the page HTML `<head>`
-     *
-     * ref：https://v1.vuepress.vuejs.org/config/#head
-     */
     head: [
         ['meta', {
             name: 'theme-color',
@@ -36,13 +24,6 @@ module.exports = {
         }, ]
     ],
     base: '/OpenCore-Post-Install/',
-
-
-    /**
-     * Theme configuration, here is the default theme configuration for VuePress.
-     *
-     * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
-     */
     theme: 'vuepress-theme-succinct',
     globalUIComponents: [
         'ThemeManager'
@@ -50,45 +31,47 @@ module.exports = {
 
     themeConfig: {
         lastUpdated: true,
-        repo: 'https://github.com/dortania/OpenCore-Post-Install',
+        repo: 'https://github.com/deomkds/OpenCore-Post-Install',
         editLinks: false,
         docsDir: 'OpenCore-Post-Install',
         editLinkText: '',
         logo: '/homepage.png',
         nav: [{
-            text: 'Dortania Guides',
+            text: 'Outros Guias',
+            ariaLabel: 'Language Menu',
             items: [{
-                    text: 'Home Site',
-                    link: 'https://dortania.github.io/'
-                },
-                {
-                    text: 'OpenCore Install Guide',
-                    link: 'https://dortania.github.io/OpenCore-Install-Guide/'
-                },
-	            {
-	                text: 'OpenCore Multiboot',
-	                link: 'https://dortania.github.io/OpenCore-Multiboot/'
-	            },
-                {
-                    text: 'Getting Started With ACPI',
-                    link: 'https://dortania.github.io/Getting-Started-With-ACPI/'
-                },
-                {
-                    text: 'GPU Buyers Guide',
-                    link: 'https://dortania.github.io/GPU-Buyers-Guide/'
-                },
-                {
-                    text: 'Wireless Buyers Guide',
-                    link: 'https://dortania.github.io/Wireless-Buyers-Guide/'
-                },
-                {
-                    text: 'Anti Buyers Guide',
-                    link: 'https://dortania.github.io/Anti-Hackintosh-Buyers-Guide/'
-                },
+                text: 'Site Original (em inglês)',
+                link: 'https://dortania.github.io/'
+            },
+            {
+                text: 'Primeiros Passos com a ACPI',
+                link: 'https://deomkds.github.io/Getting-Started-With-ACPI/'
+            },
+            {
+                text: 'Guia de Instalação do OpenCore',
+                link: 'https://deomkds.github.io/OpenCore-Install-Guide/'
+            },
+            {
+                text: 'Multiboot com o OpenCore',
+                link: 'https://deomkds.github.io/OpenCore-Multiboot/'
+            },            
+            {
+                text: 'Guia de Compra de GPUs',
+                link: 'https://deomkds.github.io/GPU-Buyers-Guide/'
+            },
+            {
+                text: 'Guia de Compra de Wi-Fi',
+                link: 'https://deomkds.github.io/Wireless-Buyers-Guide/'
+            },
+            {
+                text: 'Guia de Compra Anti-Hackintosh',
+                link: 'https://deomkds.github.io/Anti-Hackintosh-Buyers-Guide/'
+            },
             ]
-        }, ],
+        },
+        ],
         sidebar: [{
-                title: 'Introduction',
+                title: 'Introdução',
                 collapsable: false,
                 sidebarDepth: 1,
                 children: [
@@ -102,50 +85,50 @@ module.exports = {
                 sidebarDepth: 2,
                 children: [
 
-                    ['/universal/audio', 'Fixing Audio'],
-                    ['/universal/oc2hdd', 'Booting without USB'],
-                    ['/universal/update', 'Updating OpenCore, kexts and macOS'],
-                    ['/universal/drm', 'Fixing DRM'],
-                    ['/universal/iservices', 'Fixing iServices'],
-                    ['/universal/pm', 'Fixing Power Management'],
-                    ['/universal/sleep', 'Fixing Sleep'],
+                    ['/universal/audio', 'Corrigindo o Áudio'],
+                    ['/universal/oc2hdd', 'Iniciando sem Pendrive'],
+                    ['/universal/update', 'Atualizando o OpenCore, as kexts e o macOS'],
+                    ['/universal/drm', 'Corrigindo a DRM'],
+                    ['/universal/iservices', 'Corrigindo os iServiços'],
+                    ['/universal/pm', 'Corrigindo o Gerenciamento de Energia'],
+                    ['/universal/sleep', 'Corrigindo a Suspensão'],
                 ]
             },
             {
-                title: 'USB Fixes',
+                title: 'Correções de USB',
                 collapsable: false,
                 sidebarDepth: 1,
                 children: [
-                    ['/usb/', 'USB Mapping: Introduction'],
-                    ['/usb/system-preparation', 'System Preparation'],
+                    ['/usb/', 'Mapeamento de USBs: Introdução'],
+                    ['/usb/system-preparation', 'Preparação do Sistema'],
                     {
-                        title: 'USB Mapping',
+                        title: 'Mapeamento de USBs',
                         collapsable: true,
                         sidebarDepth: 2,
                         children: [
-                            ['/usb/intel-mapping/intel', 'Intel USB mapping'],
-                            ['/usb/manual/manual', 'Manual Mapping'],
+                            ['/usb/intel-mapping/intel', 'Mapeamento de USBs em Intel'],
+                            ['/usb/manual/manual', 'Mapeamento Manual'],
                         ]
                     },
                     {
-                        title: 'Miscellaneous Fixes',
+                        title: 'Outras Correções',
                         collapsable: true,
                         sidebarDepth: 1,
                         children: [
-                            ['/usb/misc/power', 'Fixing USB Power'],
-                            ['/usb/misc/shutdown', 'Fixing Shutdown/Restart'],
-                            ['/usb/misc/instant-wake', 'Fixing Instant Wake'],
-                            ['/usb/misc/keyboard', 'Fixing Keyboard Wake Issues'],
+                            ['/usb/misc/power', 'Corrigindo a Energia da USB'],
+                            ['/usb/misc/shutdown', 'Corrigindo Desligamento/Reinicialização'],
+                            ['/usb/misc/instant-wake', 'Corrigindo o Retorno Imediato da Suspensão'],
+                            ['/usb/misc/keyboard', 'Acordar o Computador com o Teclado'],
                         ]
                     },
                 ]
             },
             {
-                title: 'Security',
+                title: 'Segurança',
                 collapsable: false,
                 sidebarDepth: 2,
                 children: [
-                    ['/universal/security', 'Security and FileVault'],
+                    ['/universal/security', 'Segurança e FileVault'],
                     {
                         title: '',
                         collapsable: false,
@@ -154,74 +137,74 @@ module.exports = {
                             ['/universal/security/filevault', 'FileVault'],
                             ['/universal/security/vault', 'Vault'],
                             ['/universal/security/scanpolicy', 'ScanPolicy'],
-							['/universal/security/password', 'OpenCore Menu Password'],
-                            ['/universal/security/applesecureboot', 'Apple Secure Boot'],
+							              ['/universal/security/password', 'Senha de Menu no OpenCore'],
+                            ['/universal/security/applesecureboot', 'Inicialização Segura da Apple'],
                         ]
                     },
                 ]
             },
             {
-                title: 'Laptop Specifics',
+                title: 'Específicos de Notebooks',
                 collapsable: false,
                 children: [
-                    ['/laptop-specific/battery', 'Fixing Battery Read-outs'],
+                    ['/laptop-specific/battery', 'Corrigindo os Níveis de Bateria'],
 
                 ]
             },
             {
-                title: 'Cosmetics',
+                title: 'Cosméticos',
                 collapsable: false,
                 children: [
-                    ['/cosmetic/verbose', 'Fixing Resolution and Verbose'],
-                    ['/cosmetic/gui', 'Add GUI and Boot-chime'],
-                    ['/universal/memory', 'Fixing MacPro7,1 Memory Errors'],
+                    ['/cosmetic/verbose', 'Corrigindo Resolução e Modo Verbose'],
+                    ['/cosmetic/gui', 'Ativando a Interface Gráfica e o Som de Boot'],
+                    ['/universal/memory', 'Corrigindo Erros de Memória no MacPro7,1'],
                 ]
             },
             {
                 title: 'Multiboot',
                 collapsable: false,
                 children: [
-					['https://dortania.github.io/OpenCore-Multiboot/', 'OpenCore Multiboot'],
-                    ['/multiboot/bootstrap', 'Setting up LauncherOption'],
-                    ['/multiboot/bootcamp', 'Installing BootCamp'],
+					          ['https://deomkds.github.io/OpenCore-Multiboot/', 'Multiboot com o OpenCore'],
+                    ['/multiboot/bootstrap', 'Configurando LauncherOption'],
+                    ['/multiboot/bootcamp', 'Instalando o BootCamp'],
                 ]
             },
             {
-                title: 'Miscellaneous',
+                title: 'Outros',
                 collapsable: false,
                 children: [
-                    ['/misc/rtc', 'Fixing RTC'],
-                    ['/misc/msr-lock', 'Fixing CFG Lock'],
-                    ['/misc/nvram', 'Emulated NVRAM'],
+                    ['/misc/rtc', 'Corrigindo o RTC'],
+                    ['/misc/msr-lock', 'Corrigindo a Trava de CFG'],
+                    ['/misc/nvram', 'NVRAM Emulada'],
                 ]
             },
             {
-                title: 'GPU Patching',
+                title: 'Correções de GPU',
                 collapsable: false,
                 children: [
-                    ['/gpu-patching/', 'In-depth GPU patching'],
+                    ['/gpu-patching/', 'Patch Detalhado de GPU'],
 		            {
-		                title: 'Modern Intel iGPU',
+		                title: 'GPU Integrada Intel Moderna',
 		                collapsable: false,
 		                children: [
-		                    ['/gpu-patching/intel-patching/', 'Intro to iGPU patching'],
-		                    ['/gpu-patching/intel-patching/vram', 'VRAM patching'],
-							['/gpu-patching/intel-patching/connector', 'Connector-type patching'],
-							['/gpu-patching/intel-patching/busid', 'BusID patching'],
+		                    ['/gpu-patching/intel-patching/', 'Introdução aos Patches de GPU Integrada'],
+		                    ['/gpu-patching/intel-patching/vram', 'Patch de VRAM'],
+							['/gpu-patching/intel-patching/connector', 'Patch de Tipo de Conector'],
+							['/gpu-patching/intel-patching/busid', 'Patch de BusID'],
 		                ]
 		            },
 		            {
-		                title: 'Legacy Intel iGPU',
+		                title: 'GPU Integrada Intel Antiga',
 		                collapsable: false,
 		                children: [
-		                    ['/gpu-patching/legacy-intel/', 'GMA Patching'],
+		                    ['/gpu-patching/legacy-intel/', 'Patch de GMA'],
 		                ]
 		            },
 		            {
-		                title: 'Legacy Nvidia',
+		                title: 'Nvidia Antiga',
 		                collapsable: false,
 		                children: [
-		                    ['/gpu-patching/nvidia-patching/', 'Nvidia Patching'],
+		                    ['/gpu-patching/nvidia-patching/', 'Patch de Nvidia'],
 		                ]
 		            },
                 ]
