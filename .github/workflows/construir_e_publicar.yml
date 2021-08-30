@@ -1,4 +1,4 @@
-name: Build/Test/Deploy
+name: Construir e Publicar
 on:
   push:
     branches-ignore:
@@ -7,39 +7,37 @@ on:
   pull_request:
 jobs:
   build:
-    name: Build and Deploy
+    name: Construir e Publicar
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v2-beta
+      - uses: actions/setup-node@v2.4.0
         with:
           node-version: '12'
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.3.4
         with:
           fetch-depth: '0'
           persist-credentials: false
           submodules: 'recursive'
-      - name: Install
+      - name: Instalar
         run: npm install
-      - name: Build
+      - name: Construir
         run: npm run build
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@3.7.1
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master'}}
+      - name: Publicar
+        uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: .vuepress/dist/
-          CLEAN: true
+          branch: gh-pages
+          folder: .vuepress/dist/
+          clean: true
   lint:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v2-beta
+      - uses: actions/setup-node@v2.4.0
         with:
           node-version: '12'
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.3.4
         with:
           fetch-depth: '0'
           submodules: 'recursive'
